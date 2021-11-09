@@ -1,0 +1,43 @@
+*{margin: 0; padding: 0;}
+.tabs{
+    border-bottom: 1px solid grey;
+    display: flex;
+}
+.tab{
+    padding-left: 15px;
+    margin-bottom: -1px;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab.selected{
+    border: 1px solid grey;
+    border-bottom-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#file_explorer{
+    display: flex;
+    max-width: 100%;
+    border-left: 1px solid grey;
+    min-height: calc(100% - 22px);
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.file{
+    max-width: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 7px;
+}
+
+.file img{
+    width: 150px;
+    margin: 3px;
+}
+.file span{
+    text-align: center;
+}

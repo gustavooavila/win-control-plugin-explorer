@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <base href="explorer/">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div id="open_explorers" class="tabs">
+            
+        </div>
+        <div id="file_explorer">
+        </div>
+        
+        <script src="../lib/js/AHK.js"></script>
+        <script>
+            const file_explorer = document.getElementById("file_explorer");
+            const open_explorers = document.getElementById("open_explorers");
+            const extension_icon = {};
+            
+            AHK.addEventListener("explorer_open", ({data}) => {
+            data.forEach((explorer)=>{createTab(explorer)});
+            
+            selectTab(data[0].hwnd);
+            });
+            
+            AHK.addEventListener("explorer_contents", ({data}) => {
+            Object.keys(data).forEach((path) => {
+            const {isDir, ext, name} = data[path];
+            
+            createItem(path, isDir, name)
+            })
+            });
+            
+            AHK.sendEvent("explorer_getOpenExplorers", {});
+            
+            AHK.addEventListener("icon_Loaded", ({data}) => {
+            const {ext, icon, path} = data;
+            let elements;
+            if(ext) {
+                elements = file_explorer.querySelectorAll(`[data-ext="${ext}"] img`)
+                if(elements.length) {
+                    Array.from(elements).forEach((element) => {element.src = icon});
+                }
+            
+            } else {
+                elements = file_explorer.querySelectorAll(`[data-is-dir="1"]`)
+                if(elements.length) {
+                    Array.from(elements).find((element) => element.dataset.path == path)
+                    .getElementsByTagName("img")[0].src = icon
+                }
+            }
+            
+        });
+        
+        function createItem(path, isDir, filename) {
+            const item = document.createElement("div");
+            const name = document.createElement("span");
+            const icon = new Image();
+            
+            const ext = !isDir && filename.includes(".")? filename.split(".").pop() : "";
+            
+            item.dataset.ext = ext
+            item.dataset.isDir = isDir
+            item.dataset.path = path
+            
+            item.className = "file";
+            name.innerText = filename;
+            
+            if(isDir) {
+                icon.src = "imgs/folder.png";
+            } 
+            else if(ext == "")
+            {
+                icon.src = "imgs/unknown.png";
+            }
+            
+            item.appendChild(icon);
+            item.appendChild(name);
+            file_explorer.appendChild(item);
+        }
+        
+        function createTab(explorer) {
+            const {hwnd, path} = explorer;
+            const folder_name = path.split("\\").pop()
+            
+            const ele = document.createElement("p")
+            ele.classList.add("tab");
+            ele.classList.add("selected");
+            ele.innerText = folder_name;
+            ele.dataset.hwnd = hwnd
+            
+            open_explorers.appendChild(ele);
+        }
+        
+        function selectTab(hwnd) {
+            Array.from(open_explorers.getElementsByClassName("selected")).forEach(element=>{element.classList.remove("selected")});
+            open_explorers.querySelector(`p[data-hwnd="${hwnd}"]`).classList.add("selected");
+            
+            AHK.sendEvent("explorer_getExplorerFiles", {hwnd})
+        }
+        
+    </script>
+</body>
+</html>    

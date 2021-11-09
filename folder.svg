@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="folder.svg"
+   inkscape:export-filename="C:\Users\Shadownrun\Documents\javascript\win-control\plugins\explorer\folder.png"
+   inkscape:export-xdpi="130.048"
+   inkscape:export-ydpi="130.048"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.4823793"
+     inkscape:cx="258.36842"
+     inkscape:cy="126.48585"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient7410"
+       inkscape:swatch="gradient">
+      <stop
+         style="stop-color:#aa881f;stop-opacity:1;"
+         offset="0"
+         id="stop7418" />
+      <stop
+         style="stop-color:#c1902f;stop-opacity:0;"
+         offset="1"
+         id="stop7420" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient7410-4"
+       inkscape:swatch="gradient">
+      <stop
+         style="stop-color:#d7b34f;stop-opacity:1;"
+         offset="0"
+         id="stop7406" />
+      <stop
+         style="stop-color:#c1902f;stop-opacity:0;"
+         offset="1"
+         id="stop7408" />
+    </linearGradient>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter10003"
+       x="-0.0035941931"
+       y="-0.0061479925"
+       width="1.0071884"
+       height="1.012296">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.046685742"
+         id="feGaussianBlur10005" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-56.569817,-96.689926)">
+    <path
+       id="rect1136"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999"
+       d="m 61.073391,112.28584 c -2.295706,0 -4.143974,2.26812 -4.143974,5.08577 v 1.87424 h -0.0029 v 61.04085 h 83.970543 v -61.04085 h -56.7959 v -1.87424 c 0,-2.81765 -1.847791,-5.08577 -4.143496,-5.08577 z" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999"
+       id="rect1908"
+       width="74.765518"
+       height="43.299736"
+       x="64.528107"
+       y="125.20298" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999"
+       id="rect1908-1"
+       width="74.765518"
+       height="43.299736"
+       x="63.181931"
+       y="127.53305" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 66.684626,140.78304 c 34.242264,0 34.125404,0 34.125404,0"
+       id="path2024" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 77.319594,132.50112 c 51.681326,0 51.681326,0 51.681326,0"
+       id="path2139" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 66.713843,143.15423 c 33.891667,0 33.891667,0 33.891667,0"
+       id="path2141" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999"
+       id="rect2245"
+       width="7.3626699"
+       height="7.8351898"
+       x="66.918365"
+       y="130.0267" />
+    <path
+       id="rect1136-6"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.88174;filter:url(#filter10003)"
+       d="m 444.48828,456.7832 -3.79101,17.83985 H 271.72266 l -55.875,153.42187 H 558.58203 L 620.95312,456.7832 Z"
+       transform="matrix(0.24500174,0,0,0.28817018,4.0434943,-0.69720944)" />
+  </g>
+</svg>
