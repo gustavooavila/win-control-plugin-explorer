@@ -90,7 +90,7 @@ class Runner
         this.filename := sFilename
         
         this.shell := ComObjCreate("WScript.Shell")
-        command := A_AhkPath " /ErrorStdOut " chr(34) A_WorkingDir "\explorer\extract_icons.ahk" chr(34) " " chr(34) this.path chr(34) " " chr(34) this.pipePath chr(34)
+        command := A_AhkPath " " chr(34) A_WorkingDir "\explorer\extract_icons.ahk" chr(34) " " chr(34) this.path chr(34) " " chr(34) this.pipePath chr(34)
         this.exec := this.shell.Exec(command)
     }
     
@@ -98,7 +98,7 @@ class Runner
     {
         if(this.exec.Status)
         {
-            console.log(this.exec.ExitCode)
+            ;console.log(this.exec.ExitCode)
             if(this.exec.ExitCode)
             {
                 return True
