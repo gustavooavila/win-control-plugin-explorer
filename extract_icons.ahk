@@ -108,12 +108,13 @@ getAttributes(sPath)
 {
     FS := ComObjCreate("Scripting.FileSystemObject")
     isLink := False
+    isFile := False
     isFolder := FS.FolderExists(sPath) = -1 ? True : False
     if(isFolder){
         Folder := FS.GetFolder(sPath)
         isLink := Folder.Attributes & 0x400 ? True : False
     }
-    else if(FS.FileExists(sPath))
+    else if(isFile := FS.FileExists(sPath) = -1 ? True : False)
     {
         File := FS.GetFile(sPath)
         isLink := File.Attributes & 0x400 ? True : False       
@@ -163,14 +164,17 @@ sPath := A_Args[1]
 SplitPath, sPath, sFilename,, sExt
 attributes := getAttributes(sPath)
 
-sOutDir := A_WorkingDir "\explorer\icons"
+global sOutDir := A_WorkingDir "\explorer\icons"
 if(!InStr(FileExist(sOutDir), "D"))
 {
     FileCreateDir, % sOutDir
 }
+if(FileExist(A_Args[2]))
+{
+    FileDelete, % A_Args[2]
+}
 
 stdout := FileOpen(A_Args[2], "w")
-
 pToken := Gdip_Startup()
 if(attributes.isFolder)
 {
@@ -181,5 +185,6 @@ else if(attributes.isFile)
 {
     getIcon(sPath, attributes.isLink)
 }
+
 stdout.Close()
 Gdip_Shutdown(pToken)
