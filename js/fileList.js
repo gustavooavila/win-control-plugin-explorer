@@ -1,11 +1,11 @@
 const file_list = {
     container: document.getElementById("file_explorer"),
-    file: [],
+    files: [],
     fromArray: function(file_list) {
         this.clear();
-        Object.keys(file_list).forEach((path) => {
-            const {isDir, ext, name} = file_list[path];
-            this.file.push({path: file_list[path], isDir, ext, name});
+        file_list.forEach((item_data) => {
+            const {path, isDir, ext, name} = item_data;
+            this.files.push({path, isDir, ext, name});
             
             this.add(path, isDir, name);
         });

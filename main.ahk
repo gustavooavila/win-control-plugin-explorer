@@ -35,7 +35,7 @@ getFolderContents(hwnd)
     {
         if (oWin.hwnd = hwnd)
         {
-            itemList := {}
+            itemList := []
             oItems := oWin.Document.Folder.Items()
             for FolderItem in oItems
             {
@@ -44,6 +44,7 @@ getFolderContents(hwnd)
                 item.name := FolderItem.Name
                 item.size := FolderItem.Size
                 item.type := FolderItem.Type
+                item.path := FolderItem.Path
                 item.isLink := FolderItem.IsLink == -1 ? 1 : 0
                 item.isDir := FolderItem.IsFolder == -1 ? 1 : 0
                 item.ext := !item.isDir && InStr(item.name, ".") ? StrSplit(item.name, ".").Pop() : ""
@@ -51,7 +52,7 @@ getFolderContents(hwnd)
                 
                 test := new IconExtraction(FolderItem.Path)
                 
-                itemList[FolderItem.Path] := item
+                itemList.push(item)
             }
             return itemList
         }
@@ -82,13 +83,6 @@ getOpenExplorers()
 
 NodeJS.addEventListener("explorer_getOpenExplorers", "getOpenExplorers")
 NodeJS.addEventListener("explorer_getExplorerFiles", "getOpenExplorerFiles")
-
-;NodeJS.addEventListener("explorer_navigate", "setExplorerPath")
-    /*
-    pToken := Gdip_Startup()
-    ;getFileIcon("C:\Users\Shadownrun\Documents\ahk\accpack\Acc.ahk")
-    Gdip_Shutdown(pToken)
-*/
 
 class explorer
 {
